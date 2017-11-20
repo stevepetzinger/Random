@@ -1,0 +1,73 @@
+﻿using NUnit.Framework;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace BigramGenerator.UnitTests
+{
+
+    [TestFixture]
+    public class BigramTests
+    {
+        [Test]
+        public void CleanupString_ContainsUpperCase_ConvertToLowerCase()
+        {
+            var input = "AaBb Cc";
+            var expected = "aabb cc";
+            var actual = BigramGenerator.Program.CleanUpString(input);
+
+            Assert.AreEqual(actual, expected);
+        }
+        [Test]
+        public void CleanupString_ContainsLineBreaks_ConvertToSpaces()
+        {
+            var input = $"hello{Environment.NewLine}there";
+            var expected = "hello there";
+            var actual = Program.CleanUpString(input);
+            Assert.AreEqual(actual, expected);
+        }
+        [Test]
+        public void CleanupString_ContainsPunctuation_RemovePunctuation()
+        {
+            var input = "this is a test! passed?";
+            var expected = "this is a test passed";
+            var actual = Program.CleanUpString(input);
+            Assert.AreEqual(actual, expected);
+        }
+        [Test]
+        public void ParseString_CountWords()
+        {
+            var input = "one small step for man";
+            var expected = 5; // word count
+            var actual = Program.ParseString(input).Count();
+            Assert.AreEqual(actual, expected);
+        }
+        [Test]
+        public void PerformCounts_CountDistinctPairs()
+        {
+            var input = new List<string> { "the", "quick", "brown", "fox", "and", "the", "quick", "blue", "hare" };
+            var expected = 7;
+
+            var actual = Program.PerformCounts(input).Count();
+            Assert.AreEqual(actual, expected);
+        }
+        [Test]
+        public void PerformCounts_CountOccurrences()
+        {
+            var input = new List<string> { "the", "quick", "brown", "fox", "and", "the", "quick", "blue", "hare" };
+            var expected = new Dictionary<string, int>() {
+                    { "the quick", 2 },
+                    { "quick brown", 1 },
+                    { "brown fox", 1 },
+                    { "fox and", 1 },
+                    { "and the", 1 },
+                    { "quick blue", 1 },
+                    { "blue hare", 1 } };
+            var actual = Program.PerformCounts(input);
+
+            CollectionAssert.AreEqual(expected, actual);
+        }
+    }
+}
