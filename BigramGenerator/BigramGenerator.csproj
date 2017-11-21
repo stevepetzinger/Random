@@ -7,8 +7,8 @@
     <ProjectGuid>{5941454C-6D04-476A-9534-59C59E653815}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>VAE_Bigram</RootNamespace>
-    <AssemblyName>VAE_Bigram</AssemblyName>
+    <RootNamespace>BigramGenerator</RootNamespace>
+    <AssemblyName>BigramGenerator</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>

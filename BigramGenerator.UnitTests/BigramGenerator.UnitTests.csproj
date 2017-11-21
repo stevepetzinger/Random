@@ -8,8 +8,8 @@
     <ProjectGuid>{1C1BD449-FBA4-43C5-BAB6-9C8C99352715}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>VAE_Bigram.UnitTests</RootNamespace>
-    <AssemblyName>VAE_Bigram.UnitTests</AssemblyName>
+    <RootNamespace>BigramGenerator.UnitTests</RootNamespace>
+    <AssemblyName>BigramGenerator.UnitTests</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <NuGetPackageImportStamp>
